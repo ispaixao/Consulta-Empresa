@@ -1,0 +1,117 @@
+<h3 class="text-center mt-3">Consulta de Empresas</h3>
+<div class="container">
+  <div class="col-4 offset-4">
+    <div class="row">
+      <mat-form-field class="example-form-field" appearance="fill">
+        <mat-label>CNPJ</mat-label>
+        <input
+          matInput
+          type="text"
+          mask="00.000.000/0000-00"
+          [(ngModel)]="cnpj"
+        />
+      </mat-form-field>
+      <button class="btn btn-primary" (click)="buscar()">BUSCAR</button>
+      <button class="btn btn-danger mt-1" (click)="limpar()">LIMPAR</button>
+    </div>
+  </div>
+</div>
+<ng-container #alert *ngIf="message?.status == 404">
+  <div class="alert alert-danger mt-2" role="alert">
+    CNPJ não encontrado.
+  </div>
+</ng-container>
+<form [formGroup]="form" class="form-group">
+  <div class="container-fluid card mt-3">
+    <div class="row">
+      <div class="col-6">
+        <div class="row">
+          <mat-form-field appearance="fill">
+            <mat-label>CNPJ</mat-label>
+            <input matInput formControlName="cnpj" />
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="row">
+          <mat-form-field appearance="fill">
+            <mat-label>RAZÃO SOCIAL</mat-label>
+            <input matInput formControlName="razao_social" />
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="row">
+          <mat-form-field appearance="fill">
+            <mat-label>NOME FANTASIA</mat-label>
+            <input matInput formControlName="nome_fantasia" />
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="row">
+          <mat-form-field appearance="fill">
+            <mat-label>DATA DE CADASTRO</mat-label>
+            <input matInput formControlName="dataCadastro" />
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="col-2">
+        <div class="row">
+          <mat-form-field appearance="fill">
+            <mat-label>TIPO DO LOGRADOURO</mat-label>
+            <input matInput formControlName="descricao_tipo_logradouro" />
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="row">
+          <mat-form-field appearance="fill">
+            <mat-label>LOGRADOURO</mat-label>
+            <input matInput formControlName="logradouro" />
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="col-2">
+        <div class="row">
+          <mat-form-field appearance="fill">
+            <mat-label>NÚMERO</mat-label>
+            <input matInput formControlName="numero" />
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="row">
+          <mat-form-field appearance="fill">
+            <mat-label>BAIRRO</mat-label>
+            <input matInput formControlName="bairro" />
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="row">
+          <mat-form-field appearance="fill">
+            <mat-label>CIDADE</mat-label>
+            <input matInput formControlName="cidade" />
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="row">
+          <mat-form-field appearance="fill">
+            <mat-label>UF</mat-label>
+            <input matInput formControlName="uf" />
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="row">
+          <mat-form-field appearance="fill">
+            <mat-label>CEP</mat-label>
+            <input matInput formControlName="cep" />
+          </mat-form-field>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
